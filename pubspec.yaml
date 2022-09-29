@@ -39,6 +39,7 @@ dependencies:
   google_fonts: ^3.0.1
   another_flushbar: ^1.12.29
   intl: ^0.17.0
+  carousel_slider: ^4.1.1
 
 dev_dependencies:
   flutter_test:
