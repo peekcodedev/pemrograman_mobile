@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:sclicingsuccess/ui/pages/onboarding_page.dart';
 import 'package:sclicingsuccess/ui/shared/theme.dart';
 
 class SplashPage extends StatefulWidget {
@@ -13,16 +12,11 @@ class SplashPage extends StatefulWidget {
 
 class _SplashPageState extends State<SplashPage> {
   @override
-  void initState() { 
+  void initState() {
     super.initState();
 
     Timer(const Duration(seconds: 2), () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => const OnboardingPage(),
-        ),
-      );
+      Navigator.pushNamed(context, '/onboarding');
     });
   }
 
