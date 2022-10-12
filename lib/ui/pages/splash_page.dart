@@ -13,7 +13,7 @@ class SplashPage extends StatefulWidget {
 
 class _SplashPageState extends State<SplashPage> {
   @override
-  void initState() {
+  void initState() { 
     super.initState();
 
     Timer(const Duration(seconds: 2), () {

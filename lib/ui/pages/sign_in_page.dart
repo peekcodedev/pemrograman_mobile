@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sclicingsuccess/ui/shared/theme.dart';
+import 'package:sclicingsuccess/ui/widget/buttons.dart';
+import 'package:sclicingsuccess/ui/widget/form.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({super.key});
@@ -47,52 +49,15 @@ class SignInPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // NOTE: email input woi
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Email Address',
-                      style: blackTextStyle.copyWith(
-                        fontWeight: medium,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    TextFormField(
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(14),
-                          ),
-                          contentPadding: const EdgeInsets.all(12)),
-                    ),
-                  ],
+                const CustomFormWidget(
+                  title: 'Email Address',
                 ),
                 const SizedBox(
                   height: 16,
                 ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Password',
-                      style: blackTextStyle.copyWith(
-                        fontWeight: medium,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    TextFormField(
-                      obscureText: true,
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(14),
-                          ),
-                          contentPadding: const EdgeInsets.all(12)),
-                    ),
-                  ],
+                const CustomFormWidget(
+                  title: 'Password',
+                  obsecureText: true,
                 ),
                 const SizedBox(
                   height: 8,
@@ -107,25 +72,9 @@ class SignInPage extends StatelessWidget {
                 const SizedBox(
                   height: 30,
                 ),
-                SizedBox(
-                  width: double.infinity,
-                  height: 50,
-                  child: TextButton(
-                    onPressed: () {},
-                    style: TextButton.styleFrom(
-                      backgroundColor: purpleColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(56),
-                      ),
-                    ),
-                    child: Text(
-                      'Get Started',
-                      style: whiteTextStyle.copyWith(
-                        fontSize: 16,
-                        fontWeight: semiBold,
-                      ),
-                    ),
-                  ),
+                CustomFilledButton(
+                  title: 'Sign In',
+                  onPressed: () {},
                 ),
               ],
             ),
@@ -133,28 +82,9 @@ class SignInPage extends StatelessWidget {
           const SizedBox(
             height: 50,
           ),
-          SizedBox(
-            width: double.infinity,
-            height: 24,
-            child: TextButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const SignInPage(),
-                  ),
-                );
-              },
-              style: TextButton.styleFrom(
-                padding: EdgeInsets.zero,
-              ),
-              child: Text(
-                'Create Now Account',
-                style: greyTextStyle.copyWith(
-                  fontSize: 16,
-                ),
-              ),
-            ),
+          CustomTextButton(
+            title: 'Create Now Account',
+            onPressed: () {},
           ),
         ],
       ),

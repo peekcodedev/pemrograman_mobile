@@ -5,23 +5,23 @@ class CustomFilledButton extends StatelessWidget {
   final String title;
   final double widht;
   final double height;
-  final VoidCallback? OnPressed;
+  final VoidCallback? onPressed;
 
   const CustomFilledButton({
-    Key? key,
+    super.key,
     required this.title,
     this.widht = double.infinity,
     this.height = 50,
-    this.OnPressed,
-  }) : super(key: key);
+    this.onPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: double.infinity,
-      height: 50,
+      width: widht,
+      height: height,
       child: TextButton(
-        onPressed: OnPressed,
+        onPressed: onPressed,
         style: TextButton.styleFrom(
           backgroundColor: purpleColor,
           shape: RoundedRectangleBorder(
@@ -33,6 +33,41 @@ class CustomFilledButton extends StatelessWidget {
           style: whiteTextStyle.copyWith(
             fontSize: 16,
             fontWeight: semiBold,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class CustomTextButton extends StatelessWidget {
+  final String title;
+  final double widht;
+  final double height;
+  final VoidCallback? onPressed;
+
+  const CustomTextButton({
+    super.key,
+    required this.title,
+    this.widht = double.infinity,
+    this.height = 24,
+    this.onPressed,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: widht,
+      height: height,
+      child: TextButton(
+        onPressed: () {},
+        style: TextButton.styleFrom(
+          padding: EdgeInsets.zero,
+        ),
+        child: Text(
+          title,
+          style: greyTextStyle.copyWith(
+            fontSize: 16,
           ),
         ),
       ),
