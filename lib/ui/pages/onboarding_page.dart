@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:sclicingsuccess/ui/pages/sign_in_page.dart';
 import 'package:sclicingsuccess/ui/shared/theme.dart';
 
 class OnboardingPage extends StatefulWidget {
@@ -96,7 +97,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                       textAlign: TextAlign.center,
                     ),
                     SizedBox(
-                      height: currentIndex == 2 ? 30 : 50,
+                      height: currentIndex == 2 ? 38 : 50,
                     ),
                     currentIndex == 2
                         ? Column(
@@ -130,7 +131,15 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                 width: double.infinity,
                                 height: 24,
                                 child: TextButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            const SignInPage(),
+                                      ),
+                                    );
+                                  },
                                   style: TextButton.styleFrom(
                                     padding: EdgeInsets.zero,
                                   ),
