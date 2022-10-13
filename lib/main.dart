@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sclicingsuccess/ui/pages/onboarding_page.dart';
 import 'package:sclicingsuccess/ui/pages/sign_in_page.dart';
 import 'package:sclicingsuccess/ui/pages/sign_up_page.dart';
+import 'package:sclicingsuccess/ui/pages/sign_up_set_ktp_page.dart';
 import 'package:sclicingsuccess/ui/pages/sign_up_set_profile_page.dart';
 import 'package:sclicingsuccess/ui/pages/splash_page.dart';
 
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
         '/sign-in': (context) => const SignInPage(),
         '/sign-up': (context) => const SignUpPage(),
         '/sign-up-set-profile': (context) => const SignUpSetProfile(),
+        '/sign-up-set-ktp': (context) => const SignUpSetKtpPage(),
       },
     );
   }
