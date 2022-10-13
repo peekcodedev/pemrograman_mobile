@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:sclicingsuccess/ui/widget/form.dart';
 
 import '../shared/theme.dart';
 import '../widget/buttons.dart';
-import '../widget/form.dart';
 
-class SignUpPage extends StatelessWidget {
-  const SignUpPage({super.key});
+class SignUpSetProfile extends StatelessWidget {
+  const SignUpSetProfile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -48,44 +48,59 @@ class SignUpPage extends StatelessWidget {
               color: whiteColor,
             ),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const CustomFormWidget(
-                  title: 'Full Name',
+                // Container(
+                //   width: 120,
+                //   height: 120,
+                //   decoration: BoxDecoration(
+                //     shape: BoxShape.circle,
+                //     color: lightBackgroundColor,
+                //   ),
+                //   child: Center(
+                //     child: Image.asset(
+                //       'assets/ic_upload.png',
+                //       width: 32,
+                //     ),
+                //   ),
+                // ),
+                Container(
+                  width: 120,
+                  height: 120,
+                  decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage(
+                          'assets/img_profile.png',
+                        ),
+                      )),
                 ),
                 const SizedBox(
                   height: 16,
                 ),
-                const CustomFormWidget(
-                  title: 'Email Address',
+                Text(
+                  'Shayna Hanna',
+                  style: blackTextStyle.copyWith(
+                    fontSize: 18,
+                    fontWeight: medium,
+                  ),
                 ),
                 const SizedBox(
                   height: 16,
                 ),
-                const CustomFormWidget(
-                  title: 'Password',
-                  obsecureText: true,
-                ),
+                const CustomFormWidget(title: 'Set PIN (6 digit number)'),
                 const SizedBox(
                   height: 30,
                 ),
                 CustomFilledButton(
                   title: 'Continue',
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/sign-up-set-profile');
-                  },
+                  onPressed: () {},
                 ),
               ],
             ),
           ),
           const SizedBox(
             height: 50,
-          ),
-          CustomTextButton(
-            title: 'Sign In',
-            onPressed: () {
-              Navigator.pushNamed(context, '/sign-in');
-            },
           ),
         ],
       ),
