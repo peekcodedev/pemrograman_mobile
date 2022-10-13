@@ -4,6 +4,7 @@ import 'package:sclicingsuccess/ui/pages/sign_in_page.dart';
 import 'package:sclicingsuccess/ui/pages/sign_up_page.dart';
 import 'package:sclicingsuccess/ui/pages/sign_up_set_ktp_page.dart';
 import 'package:sclicingsuccess/ui/pages/sign_up_set_profile_page.dart';
+import 'package:sclicingsuccess/ui/pages/sign_up_success_page.dart';
 import 'package:sclicingsuccess/ui/pages/splash_page.dart';
 
 void main() {
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
         '/sign-up': (context) => const SignUpPage(),
         '/sign-up-set-profile': (context) => const SignUpSetProfile(),
         '/sign-up-set-ktp': (context) => const SignUpSetKtpPage(),
+        '/sign-up-success': (context) => const SignUpSuccessPage(),
       },
     );
   }
