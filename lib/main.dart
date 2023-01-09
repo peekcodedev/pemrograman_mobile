@@ -12,6 +12,9 @@ import 'package:sclicingsuccess/ui/pages/sign_up_set_ktp_page.dart';
 import 'package:sclicingsuccess/ui/pages/sign_up_set_profile_page.dart';
 import 'package:sclicingsuccess/ui/pages/sign_up_success_page.dart';
 import 'package:sclicingsuccess/ui/pages/splash_page.dart';
+import 'package:sclicingsuccess/ui/pages/topup_amount_page.dart';
+import 'package:sclicingsuccess/ui/pages/topup_page.dart';
+import 'package:sclicingsuccess/ui/pages/topup_success.dart';
 import 'package:sclicingsuccess/ui/shared/theme.dart';
 
 void main() {
@@ -53,7 +56,10 @@ class MyApp extends StatelessWidget {
         '/pin': (context) => const PinPage(),
         '/profile-edit': (context) => const ProfileEditPage(),
         '/profile-edit-pin': (context) => const ProfilEditPinPage(),
-        '/profile-edit-success': (context) => const ProfileEditSuccessPage(), 
+        '/profile-edit-success': (context) => const ProfileEditSuccessPage(),
+        '/topup': (context) => const TopupPage(),
+        '/topup-amount': (context) => const TopupAmountPage(),
+        '/topup-success': (context) => const TopupSuccess(),
       },
     );
   }
