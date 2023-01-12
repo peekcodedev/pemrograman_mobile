@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sclicingsuccess/ui/pages/data_package_page.dart';
+import 'package:sclicingsuccess/ui/pages/data_provider_page.dart';
+import 'package:sclicingsuccess/ui/pages/data_success_page.dart';
 import 'package:sclicingsuccess/ui/pages/home_page.dart';
 import 'package:sclicingsuccess/ui/pages/onboarding_page.dart';
 import 'package:sclicingsuccess/ui/pages/pin_page.dart';
@@ -66,6 +69,9 @@ class MyApp extends StatelessWidget {
         '/transfer': (context) => const TransferPage(),
         '/transfer-amount': (context) => const TransferAmountPage(),
         '/transfer-success': (context) => const TransferSuccess(),
+        '/data': (context) => const DataProviderPage(),
+        '/package': (context) => const DataPackagePage(),
+        '/package-success': (context) => const DataSuccessPage(),
       },
     );
   }
