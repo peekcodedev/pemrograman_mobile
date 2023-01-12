@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sclicingsuccess/ui/shared/helpers.dart';
 import 'package:sclicingsuccess/ui/shared/theme.dart';
 import 'package:sclicingsuccess/ui/widget/buttons.dart';
 
@@ -19,8 +20,13 @@ class _PinPageState extends State<PinPage> {
       });
     }
 
-    if (pinController.text.length == 6 && pinController.text == '123123') {
-      Navigator.pop(context, true);
+    if (pinController.text.length == 6) {
+      if (pinController.text.length == 6 && pinController.text == '123123') {
+        Navigator.pop(context, true);
+      } else {
+        showCustomSnackbar(
+            context, 'Pin yang anda Masukkan Salah. Silahkan coba lagi.');
+      }
     }
   }
 

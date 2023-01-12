@@ -3,6 +3,8 @@ import 'package:sclicingsuccess/ui/shared/theme.dart';
 import 'package:sclicingsuccess/ui/widget/buttons.dart';
 import 'package:sclicingsuccess/ui/widget/data_provider_item.dart';
 
+import '../shared/shared_method.dart';
+
 class DataProviderPage extends StatelessWidget {
   const DataProviderPage({super.key});
 
@@ -53,7 +55,7 @@ class DataProviderPage extends StatelessWidget {
                     height: 2,
                   ),
                   Text(
-                    ' Balance : Rp 180.000.000',
+                    ' Balance : ${formatCurrency(180000000)}',
                     style: greyTextStyle.copyWith(
                       fontSize: 12,
                     ),
