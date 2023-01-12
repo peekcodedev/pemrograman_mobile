@@ -15,6 +15,9 @@ import 'package:sclicingsuccess/ui/pages/splash_page.dart';
 import 'package:sclicingsuccess/ui/pages/topup_amount_page.dart';
 import 'package:sclicingsuccess/ui/pages/topup_page.dart';
 import 'package:sclicingsuccess/ui/pages/topup_success.dart';
+import 'package:sclicingsuccess/ui/pages/transfer_amount_page.dart';
+import 'package:sclicingsuccess/ui/pages/transfer_page.dart';
+import 'package:sclicingsuccess/ui/pages/transfer_success.dart';
 import 'package:sclicingsuccess/ui/shared/theme.dart';
 
 void main() {
@@ -60,6 +63,9 @@ class MyApp extends StatelessWidget {
         '/topup': (context) => const TopupPage(),
         '/topup-amount': (context) => const TopupAmountPage(),
         '/topup-success': (context) => const TopupSuccess(),
+        '/transfer': (context) => const TransferPage(),
+        '/transfer-amount': (context) => const TransferAmountPage(),
+        '/transfer-success': (context) => const TransferSuccess(),
       },
     );
   }

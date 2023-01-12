@@ -2,16 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:sclicingsuccess/ui/shared/theme.dart';
 import 'package:sclicingsuccess/ui/widget/buttons.dart';
-import 'package:url_launcher/url_launcher.dart';
 
-class TopupAmountPage extends StatefulWidget {
-  const TopupAmountPage({super.key});
+class TransferAmountPage extends StatefulWidget {
+  const TransferAmountPage({super.key});
 
   @override
-  State<TopupAmountPage> createState() => _TopupAmountPageState();
+  State<TransferAmountPage> createState() => _TransferAmountPageState();
 }
 
-class _TopupAmountPageState extends State<TopupAmountPage> {
+class _TransferAmountPageState extends State<TransferAmountPage> {
   final TextEditingController amountController =
       TextEditingController(text: '0');
 
@@ -36,24 +35,25 @@ class _TopupAmountPageState extends State<TopupAmountPage> {
     });
   }
 
-  addAmount(String number) {
+  addamount(String number) {
     if (amountController.text == '0') {
       amountController.text = '';
     }
-    setState((() {
+
+    setState(() {
       amountController.text = amountController.text + number;
-    }));
+    });
   }
 
-  deleteAmount() {
+  deleteamount() {
     if (amountController.text.isNotEmpty) {
       setState(() {
         amountController.text = amountController.text
             .substring(0, amountController.text.length - 1);
+        if (amountController.text == '') {
+          amountController.text = '0';
+        }
       });
-    }
-    if (amountController.text == '') {
-      amountController.text = '0';
     }
   }
 
@@ -67,11 +67,11 @@ class _TopupAmountPageState extends State<TopupAmountPage> {
         ),
         children: [
           const SizedBox(
-            height: 36,
+            height: 50,
           ),
           Center(
             child: Text(
-              'Total Amount',
+              'Total amount',
               style: whiteTextStyle.copyWith(
                 fontSize: 20,
                 fontWeight: semiBold,
@@ -91,7 +91,6 @@ class _TopupAmountPageState extends State<TopupAmountPage> {
                 style: whiteTextStyle.copyWith(
                   fontSize: 36,
                   fontWeight: medium,
-                  // letterSpacing: 20,
                 ),
                 decoration: InputDecoration(
                   prefixIcon: Text(
@@ -99,7 +98,6 @@ class _TopupAmountPageState extends State<TopupAmountPage> {
                     style: whiteTextStyle.copyWith(
                       fontSize: 36,
                       fontWeight: medium,
-                      // letterSpacing: 20,
                     ),
                   ),
                   disabledBorder: UnderlineInputBorder(
@@ -121,55 +119,55 @@ class _TopupAmountPageState extends State<TopupAmountPage> {
               CustomInputBotton(
                 title: '1',
                 onTap: () {
-                  addAmount('1');
+                  addamount('1');
                 },
               ),
               CustomInputBotton(
                 title: '2',
                 onTap: () {
-                  addAmount('2');
+                  addamount('2');
                 },
               ),
               CustomInputBotton(
                 title: '3',
                 onTap: () {
-                  addAmount('3');
+                  addamount('3');
                 },
               ),
               CustomInputBotton(
                 title: '4',
                 onTap: () {
-                  addAmount('4');
+                  addamount('4');
                 },
               ),
               CustomInputBotton(
                 title: '5',
                 onTap: () {
-                  addAmount('5');
+                  addamount('5');
                 },
               ),
               CustomInputBotton(
                 title: '6',
                 onTap: () {
-                  addAmount('6');
+                  addamount('6');
                 },
               ),
               CustomInputBotton(
                 title: '7',
                 onTap: () {
-                  addAmount('7');
+                  addamount('7');
                 },
               ),
               CustomInputBotton(
                 title: '8',
                 onTap: () {
-                  addAmount('8');
+                  addamount('8');
                 },
               ),
               CustomInputBotton(
                 title: '9',
                 onTap: () {
-                  addAmount('9');
+                  addamount('9');
                 },
               ),
               const SizedBox(
@@ -179,12 +177,12 @@ class _TopupAmountPageState extends State<TopupAmountPage> {
               CustomInputBotton(
                 title: '0',
                 onTap: () {
-                  addAmount('0');
+                  addamount('0');
                 },
               ),
               GestureDetector(
                 onTap: () {
-                  deleteAmount();
+                  deleteamount();
                 },
                 child: Container(
                   width: 60,
@@ -204,24 +202,23 @@ class _TopupAmountPageState extends State<TopupAmountPage> {
             ],
           ),
           const SizedBox(
-            height: 30,
+            height: 20,
           ),
           CustomFilledButton(
-            title: 'Checkout Now',
+            title: 'Continue',
             onPressed: () async {
               if (await Navigator.pushNamed(context, '/pin') == true) {
-                await launch('https://demo.midtrans.com/');
-
                 Navigator.pushNamedAndRemoveUntil(
-                    context, '/topup-success', (route) => false);
+                    context, '/transfer-success', (route) => false);
               }
             },
           ),
           const SizedBox(
-            height: 15,
+            height: 10,
           ),
-          const CustomTextButton(
-            title: 'Term & Condition',
+          CustomTextButton(
+            title: 'Terms & Condition',
+            onPressed: () {},
           ),
           const SizedBox(
             height: 40,
